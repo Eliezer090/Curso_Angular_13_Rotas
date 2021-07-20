@@ -1,0 +1,12 @@
+<p *ngIf="title">Feching details for DVD{{title}}</p>
+<div *ngIf="dvdObs | async as dvd; else loading">
+  <ul>
+    <li>{{dvd.title}}</li>
+    <li>{{dvd.year}}</li>
+    <li>{{dvd.genre}}</li>
+  </ul>
+  <button mat-button color="primary" (click)="goBack()">Back</button>
+</div>
+<ng-template #loading>
+  <mat-spinner class="loading"> </mat-spinner>
+</ng-template>
